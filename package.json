@@ -1,0 +1,32 @@
+{
+  "name": "cafe-mehfile-ordering",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Café Mehfile — production-ready table QR ordering system (menu, cart, Google Sheets, WhatsApp, UPI)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "gen:sheets-script": "node --experimental-strip-types _dev/generate-sheets-script.mts",
+    "test": "node --experimental-strip-types --test --test-concurrency=1 \"_dev/*.test.mts\"",
+    "test:unit": "node --experimental-strip-types --test _dev/order-core.test.mts",
+    "test:integration": "node --experimental-strip-types --test _dev/sheets-mock-integration.test.mts",
+    "test:sync": "node --experimental-strip-types --test _dev/gs-sync.test.mts",
+    "check:assets": "node --experimental-strip-types _dev/asset-check.mts"
+  },
+  "dependencies": {
+    "next": "^16.3.5",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}
